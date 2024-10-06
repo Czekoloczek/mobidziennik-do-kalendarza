@@ -121,10 +121,10 @@ for i in calendar.keys():
     description = '{}\r\nLekcja: {}\r\nKlasa: {}'.format(
         info, name, classroom)
 
-    year = date.today().year
-    month = date.today().month
-    day = firstMonday + timedelta(days=dayNum)
-    day = day.day
+    event_date = firstMonday + timedelta(days=dayNum)
+    year = event_date.year
+    month = event_date.month
+    day = event_date.day
     #print('day: {}'.format(day))
 
     e.add('summary', summary)
