@@ -43,7 +43,7 @@ with open(configFile, 'w') as f:
 form = br.get_form()
 
 while True:
-    login = input("Podaj e-mail lub login.\nJeśli nie podszasz żadnej program spróbuje wykorzystać zapisane dane: ")
+    login = input("Podaj e-mail lub login.\nJeśli nie podszasz żadnego program spróbuje wykorzystać zapisane dane: ")
     if login == '':
         if 'login' in data:
             login = data['login']
