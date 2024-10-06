@@ -1,9 +1,33 @@
 from robobrowser import RoboBrowser
 #from bs4 import BeautifulSoup
 import re
+import yaml
+import os
+
+#Check if the config file exists, if not, create it
+configFile = 'config.yaml'
+data = {}
+if not os.path.isfile(configFile):
+    with open(configFile, 'w') as f:
+        yaml.dump({}, f)
+else:
+    with open(configFile, 'r') as f:
+        data = yaml.safe_load(f)
+
+print(data)
 
 while True:
-    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"): \n')
+    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"). Jeśli nie podasz żadnej program spróbuje wykorzystać zapisane dane: \n')
+    if schoolSubdomain == '':
+        if 'schoolSubdomain' in data:
+            schoolSubdomain = data['schoolSubdomain']
+        else:
+            while True:
+                schoolSubdomain = input('Nieznaleziono subdomeny w pliku konfiguracyjnym, wpisz ją manualnie:\n')
+                if schoolSubdomain == '':
+                    continue
+                else:
+                    break
 
     br = RoboBrowser(parser="html.parser")
     #Check if subdomain is correct
@@ -13,10 +37,26 @@ while True:
     except Exception as e:
         print(f"Nie udało się połączyć z serwerem. Sprawdź, czy podana subdomena jest poprawna. Błąd: {e}")
 
+#Save the school subdomain in the config file (Note/Todo: This updates the subdomain even if it was used before, this should only happen if you manually input the subdomain)
+with open(configFile, 'w') as f:
+    data['schoolSubdomain'] = schoolSubdomain
+    yaml.dump(data, f)
 form = br.get_form()
 
 while True:
-    form['login'] = input("Podaj e-mail lub login: ")
+    login = input("Podaj e-mail lub login: ")
+    if login == '':
+        if 'login' in data:
+            login = data['login']
+        else:
+            while True:
+                login = input('Nie znaleziono loginu w pliku konfiguracyjnym, wpisz go manualnie:\n')
+                if login == '':
+                    continue
+                else:
+                    break
+
+    form['login'] = login
     form['haslo'] = input("Podaj hasło: ")
 
     br.submit_form(form)
@@ -28,6 +68,11 @@ while True:
         print("Podane dane logowania są nieprawidłowe. Spróboj ponownie.")
     else:
         break
+
+#Save the login in the config file
+with open(configFile, 'w') as f:
+    data['login'] = login
+    yaml.dump(data, f)
 
 
 def determineDay(percent):
@@ -91,7 +136,6 @@ for bigDiv in br.find_all(class_='plansc_cnt_w'):
 from icalendar import Calendar, Event
 from datetime import datetime, date, timedelta
 #import pytz
-import os
 import random
 import string
 

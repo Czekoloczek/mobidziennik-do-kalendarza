@@ -2,3 +2,4 @@
 config_private.py
 *.html
 /*
+config.yaml
