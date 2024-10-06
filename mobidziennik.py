@@ -16,7 +16,7 @@ else:
         data = yaml.safe_load(f)
 
 while True:
-    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"). Jeśli nie podasz żadnej program spróbuje wykorzystać zapisane dane: \n')
+    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\").\nJeśli nie podasz żadnej program spróbuje wykorzystać zapisane dane: \n')
     if schoolSubdomain == '':
         if 'schoolSubdomain' in data:
             schoolSubdomain = data['schoolSubdomain']
@@ -43,7 +43,7 @@ with open(configFile, 'w') as f:
 form = br.get_form()
 
 while True:
-    login = input("Podaj e-mail lub login: ")
+    login = input("Podaj e-mail lub login.\nJeśli nie podszasz żadnej program spróbuje wykorzystać zapisane dane: ")
     if login == '':
         if 'login' in data:
             login = data['login']
