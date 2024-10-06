@@ -4,8 +4,6 @@ import re
 
 schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"): \n')
 
-print (f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
-
 br = RoboBrowser(parser="html.parser")
 br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
