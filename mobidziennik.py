@@ -2,10 +2,17 @@ from robobrowser import RoboBrowser
 #from bs4 import BeautifulSoup
 import re
 
-schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"): \n')
+while True:
+    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"): \n')
 
-br = RoboBrowser(parser="html.parser")
-br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
+    br = RoboBrowser(parser="html.parser")
+    #Check if subdomain is correct
+    try:
+        br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
+        break
+    except Exception as e:
+        print(f"Nie udało się połączyć z serwerem. Sprawdź, czy podana subdomena jest poprawna. Błąd: {e}")
+
 form = br.get_form()
 
 while True:
