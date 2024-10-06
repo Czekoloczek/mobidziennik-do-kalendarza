@@ -8,11 +8,19 @@ br = RoboBrowser(parser="html.parser")
 br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
-form['login'] = input("Podaj e-mail: ")
-form['haslo'] = input("Podaj hasło: ")
+while True:
+    form['login'] = input("Podaj e-mail: ")
+    form['haslo'] = input("Podaj hasło: ")
 
-br.submit_form(form)
-br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
+    br.submit_form(form)
+    br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
+    # Check if the user is logged in
+    pageText = br.response.text
+
+    if "Zaloguj się" in pageText:
+        print("Podane dane logowania są nieprawidłowe. Spróboj ponownie.")
+    else:
+        break
 
 
 def determineDay(percent):
