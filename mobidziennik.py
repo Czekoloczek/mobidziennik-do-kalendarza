@@ -3,6 +3,7 @@ from robobrowser import RoboBrowser
 import re
 import yaml
 import os
+import getpass
 
 #Check if the config file exists, if not, create it
 configFile = 'config.yaml'
@@ -55,7 +56,7 @@ while True:
                     break
 
     form['login'] = login
-    form['haslo'] = input("Podaj hasło: ")
+    form['haslo'] = getpass.getpass("Podaj hasło: ")
 
     br.submit_form(form)
     br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
