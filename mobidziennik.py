@@ -9,7 +9,7 @@ br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
 form['login'] = input("Podaj e-mail: ")
-form['haslo'] = input("Podaj haslo: ")
+form['haslo'] = input("Podaj hasło: ")
 
 br.submit_form(form)
 br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
