@@ -4,3 +4,4 @@ config_private.py
 /__pycache__
 /.vscode
 /*
+config.py

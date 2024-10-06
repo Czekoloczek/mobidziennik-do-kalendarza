@@ -11,14 +11,14 @@ import re
 import config
 
 br = RoboBrowser()
-br.open('https://lo2kalisz.mobidziennik.pl/dziennik/')
+br.open('https://lo1olesnica.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
 form['haslo'] = config.PASSWORD
 form['login'] = config.USER_NAME
 
 br.submit_form(form)
-br.open('https://lo2kalisz.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
+br.open('https://lo1olesnica.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
 
 
 def determineDay(percent):

@@ -2,15 +2,19 @@ from robobrowser import RoboBrowser
 #from bs4 import BeautifulSoup
 import re
 
-br = RoboBrowser()
-br.open('https://lo2kalisz.mobidziennik.pl/dziennik/')
+schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"): \n')
+
+print (f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
+
+br = RoboBrowser(parser="html.parser")
+br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
 form['login'] = input("Podaj login: ")
 form['haslo'] = input("Podaj haslo: ")
 
 br.submit_form(form)
-br.open('https://lo2kalisz.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
+br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/planzajec/?bez-zastepstw=1')
 
 
 def determineDay(percent):
