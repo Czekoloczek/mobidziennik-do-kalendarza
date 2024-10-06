@@ -9,7 +9,7 @@ br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
 while True:
-    form['login'] = input("Podaj e-mail: ")
+    form['login'] = input("Podaj e-mail lub login: ")
     form['haslo'] = input("Podaj hasło: ")
 
     br.submit_form(form)
