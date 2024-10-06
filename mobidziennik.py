@@ -143,6 +143,6 @@ for i in calendar.keys():
 
 with open('calendar.ics', 'wb') as calendar:
     print(
-        f'writing your calendar to {os.getcwd() + chr(92) + "calendar.ics"}.')
+        f'Twoje lekcje zostałe wyeksportowane do pliku {os.getcwd() + chr(92) + "calendar.ics"}.')
     calendar.write(c.to_ical())
-    input('Press anything to close.')
+    input('Naciśnij cokolwiek, aby zamknąć')
