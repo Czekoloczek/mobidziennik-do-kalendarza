@@ -1,8 +1,8 @@
 # mobidziennik-do-kalendarz
 
-## Dodaje twój osobisty kalendarz z platformy mobidziennik i zapisuje go w formacie .ics.
+## Dodaje twój plan lekcji z platformy mobidziennik i zapisuje go w formacie .ics.
 
-Możesz otworzyć ten plik w **Google Kalendarzu**, **Microsofcie Outlooku** i innych kalendarzach.
+Możesz otworzyć ten plik w **Kalendarzu Google**, **Microsoft Outlook** i innych kalendarzach.
 
 Jak korzystać?
 
