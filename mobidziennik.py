@@ -14,8 +14,6 @@ else:
     with open(configFile, 'r') as f:
         data = yaml.safe_load(f)
 
-print(data)
-
 while True:
     schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\"). Jeśli nie podasz żadnej program spróbuje wykorzystać zapisane dane: \n')
     if schoolSubdomain == '':
