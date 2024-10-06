@@ -1,7 +1,5 @@
 *.ics
 config_private.py
 *.html
-/__pycache__
-/.vscode
 /*
 config.py
