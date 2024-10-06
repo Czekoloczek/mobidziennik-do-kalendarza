@@ -8,7 +8,7 @@ br = RoboBrowser(parser="html.parser")
 br.open(f'https://{schoolSubdomain}.mobidziennik.pl/dziennik/')
 form = br.get_form()
 
-form['login'] = input("Podaj login: ")
+form['login'] = input("Podaj e-mail: ")
 form['haslo'] = input("Podaj haslo: ")
 
 br.submit_form(form)
