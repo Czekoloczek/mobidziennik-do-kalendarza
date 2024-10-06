@@ -64,7 +64,7 @@ while True:
     pageText = br.response.text
 
     if "Zaloguj się" in pageText:
-        print("Podane dane logowania są nieprawidłowe. Spróboj ponownie.")
+        print("Podane dane logowania są nieprawidłowe. Spróbuj ponownie.")
     else:
         break
 
