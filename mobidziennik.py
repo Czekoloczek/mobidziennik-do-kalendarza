@@ -15,13 +15,13 @@ else:
         data = yaml.safe_load(f)
 
 while True:
-    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\").\nJeśli nie podasz żadnej program spróbuje wykorzystać zapisane dane: \n')
+    schoolSubdomain = input('Podaj subdomenę szkoły (np. jeśli URL strony twojego dziennika to \"lo1olesnica.mobidziennik.pl\", wpisz \"lo1olesnica\").\nJeśli nie podasz żadnej, program spróbuje wykorzystać zapisane dane: \n')
     if schoolSubdomain == '':
         if 'schoolSubdomain' in data:
             schoolSubdomain = data['schoolSubdomain']
         else:
             while True:
-                schoolSubdomain = input('Nieznaleziono subdomeny w pliku konfiguracyjnym, wpisz ją manualnie:\n')
+                schoolSubdomain = input('Nie znaleziono subdomeny w pliku konfiguracyjnym, wpisz ją manualnie:\n')
                 if schoolSubdomain == '':
                     continue
                 else:
@@ -42,7 +42,7 @@ with open(configFile, 'w') as f:
 form = br.get_form()
 
 while True:
-    login = input("Podaj e-mail lub login.\nJeśli nie podszasz żadnego program spróbuje wykorzystać zapisane dane: ")
+    login = input("Podaj e-mail lub login.\nJeśli nie podasz żadnego, program spróbuje wykorzystać zapisane dane: ")
     if login == '':
         if 'login' in data:
             login = data['login']
@@ -200,6 +200,6 @@ for i in calendar.keys():
 
 with open('calendar.ics', 'wb') as calendar:
     print(
-        f'Twoje lekcje zostałe wyeksportowane do pliku {os.getcwd() + chr(92) + "calendar.ics"}.')
+        f'Twoje lekcje zostały wyeksportowane do pliku {os.getcwd() + chr(92) + "calendar.ics"}.')
     calendar.write(c.to_ical())
-    input('Naciśnij cokolwiek, aby zamknąć')
+    input('Naciśnij cokolwiek, aby zamknąć...')
