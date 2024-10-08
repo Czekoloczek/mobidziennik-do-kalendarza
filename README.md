@@ -2,7 +2,11 @@
 
 ## Eksportuje twój plan lekcji z platformy mobiDziennik i zapisuje go w pliku w formacie .ics.
 
-Możesz użyć owego pliku w **Kalendarzu Google**, **Microsoft Outlook** i innych kalendarzach, aby zaimportować swoje lekcje.
+Możesz użyć owego pliku w **[Kalendarzu Google](https://support.google.com/calendar/answer/37118?hl=pl)**, **[Microsoft Outlook](https://support.microsoft.com/pl-pl/office/importuj-kalendarze-do-programu-outlook-8e8364e1-400e-4c0f-a573-fe76b5a2d379)** i innych kalendarzach, aby zaimportować swoje lekcje.
+
+### Szybki dostęp:
+- [Jak korzystać?](#jak-korzystać) - Dowiedz się jak poprawnie użyć programu.
+- [Jak skompilować?](#jak-skompilować) - Dowiedz się jak samemu skompilować program. (Informacje przydatne głównie dla deweloperów i osób, które chcą wprowadzić zmiany w kodzie)
 
 ### Jak korzystać?
 
@@ -22,3 +26,24 @@ Możesz użyć owego pliku w **Kalendarzu Google**, **Microsoft Outlook** i inny
 
 > [!WARNING]
 > **Program nie śledzi zastępstw, odwołań lekcji itp. Program **może** przestać działać po jakiejkolwiek zmianie w mobiDzienniku wykonanej przez WizjaNet.**
+
+### Jak skompilować?
+
+1. Zainstaluj Python ze strony https://www.python.org/downloads/.
+> [!NOTE]
+> Program był testowany na wersji 3.8, 3.10, 3.12. Zalecamy pobranie najnowszej wersji.
+
+2. Otwórz CMD w folderze, w którym jest skrypt mobidziennik.py. Możesz to zrobić, wchodząc w owy folder w eksploratorze plików i wpisując `cmd` w pasku ścieżki folderu lub użyć komendy `cd` w CMD.
+
+2. Aby skompilować kod, potrzebujesz następujących dependencji:
+  - robobrowser
+  - werkzeug 0.16.1
+  - pyyaml
+  - icalendar
+  - pyinstaller
+Możesz użyć tej komendy `pip install robobrowser werkzeug==0.16.1 pyyaml icalendar pyinstaller`, aby je wszystkie zainstalować.
+
+> [!WARNING]
+> Najnowsza wersja `werkzeug` nie jest kompatybilna z `robobrowser`, zalecamy pobranie wersji 0.16.1 dla `werkzeug`.
+
+4. Użyj komendy `pyinstaller --onefile mobidziennik.py`, a następnie poczekaj, aż kompilator skończy pracę.
