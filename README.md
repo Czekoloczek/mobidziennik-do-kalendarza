@@ -10,7 +10,7 @@ Możesz użyć owego pliku w **[Kalendarzu Google](https://support.google.com/ca
 
 ### Jak korzystać?
 
-1. Pobierz plik mobidziennik.exe z [najnowszego wydania](https://github.com/JakubKoralewski/mobidziennik-do-kalendarza/releases/latest).
+1. Pobierz plik mobidziennik.exe z [najnowszego wydania](https://github.com/czekoloczek/mobidziennik-do-kalendarza/releases/latest).
 
 2. Uruchom plik, a następnie podaj subdomenę twojej szkoły na mobiDzienniku.
    - Aby zdobyć subdomenę, sprawdź, jak wygląda URL, po wejściu na dziennik. Dla mnie URL to `https://lo1olesnica.mobidziennik.pl`, więc wpiszę `lo1olesnica`.
