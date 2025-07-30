@@ -4,9 +4,13 @@
 
 Możesz użyć owego pliku w **[Kalendarzu Google](https://support.google.com/calendar/answer/37118?hl=pl)**, **[Microsoft Outlook](https://support.microsoft.com/pl-pl/office/importuj-kalendarze-do-programu-outlook-8e8364e1-400e-4c0f-a573-fe76b5a2d379)** i innych kalendarzach, aby zaimportować swoje lekcje.
 
+---
+
 ### Szybki dostęp:
 - [Jak korzystać?](#jak-korzystać) - Dowiedz się jak poprawnie użyć programu.
 - [Jak skompilować?](#jak-skompilować) - Dowiedz się jak samemu skompilować program. (Informacje przydatne głównie dla deweloperów i osób, które chcą wprowadzić zmiany w kodzie)
+
+---
 
 ### Jak korzystać?
 
@@ -27,6 +31,8 @@ Możesz użyć owego pliku w **[Kalendarzu Google](https://support.google.com/ca
 > [!WARNING]
 > **Program nie śledzi zastępstw, odwołań lekcji itp. Program **może** przestać działać po jakiejkolwiek zmianie w mobiDzienniku wykonanej przez WizjaNet.**
 
+---
+
 ### Jak skompilować?
 
 1. Zainstaluj Python ze strony https://www.python.org/downloads/.
@@ -41,9 +47,23 @@ Możesz użyć owego pliku w **[Kalendarzu Google](https://support.google.com/ca
   - pyyaml
   - icalendar
   - pyinstaller
-Możesz użyć tej komendy `pip install robobrowser werkzeug==0.16.1 pyyaml icalendar pyinstaller`, aby je wszystkie zainstalować.
+
+> [!TIP]
+> Możesz użyć tej komendy `pip install robobrowser werkzeug==0.16.1 pyyaml icalendar pyinstaller`, aby je wszystkie zainstalować.
 
 > [!WARNING]
 > Najnowsza wersja `werkzeug` nie jest kompatybilna z `robobrowser`, zalecamy pobranie wersji 0.16.1 dla `werkzeug`.
 
 4. Użyj komendy `pyinstaller --onefile mobidziennik.py`, a następnie poczekaj, aż kompilator skończy pracę.
+
+---
+
+## Liczba gwiazdek
+
+<a href="https://star-history.com/#Czekoloczek/mobidziennik-do-kalendarza&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Czekoloczek/mobidziennik-do-kalendarza&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Czekoloczek/mobidziennik-do-kalendarza&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Czekoloczek/mobidziennik-do-kalendarza&type=Date" />
+ </picture>
+</a>
